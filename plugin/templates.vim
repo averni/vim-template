@@ -297,6 +297,8 @@ function <SID>TExpandVars()
 	let l:class      = substitute(l:filen, "\\([a-zA-Z]\\+\\)", "\\u\\1\\e", "g")
 	let l:macroclass = toupper(l:class)
 	let l:camelclass = substitute(l:class, "_", "", "g")
+    " openerp class name
+    let l:oeclass    = substitute(l:filen, "_", ".", "g")
 
 	" Finally, perform expansions
 	call <SID>TExpand("DAY",   l:day)
@@ -316,6 +318,7 @@ function <SID>TExpandVars()
 	call <SID>TExpand("CLASS", l:class)
 	call <SID>TExpand("MACROCLASS", l:macroclass)
 	call <SID>TExpand("CAMELCLASS", l:camelclass)
+    call <SID>TExpand("OPENERPCLASS", l:oeclass)
 	call <SID>TExpand("LICENSE", exists("g:license") ? g:license : "MIT")
 endfunction
 
