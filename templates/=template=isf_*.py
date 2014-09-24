@@ -14,7 +14,7 @@ import logging
 
 _logger = logging.getLogger(__name__)
 
-class %FILE%:
+class %FILE%(osv.Model):
     _name = "%OPENERPCLASS%"
     _description = ""
     _columns = {
